@@ -4,8 +4,46 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Razor Pages</h1>
-    <h2>by Jason Huggins</h2>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <header class="text-center">
+        <h1 class="display-4">Core5 Razor Pages</h1>
+        <h2>by @Model.FullName</h2>
+    </header>
+    <br /><br />
+    <form method="post" class="mx-auto" style="width:200px">
+        <p class="col-sm-2">
+            <label for="name">Name</label>
+            <input type="text" asp-for="FullName" placeholder="Full name" required>
+        </p>
+        <p class="col-sm-4">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="example@email.com" required>
+        </p>
+        <p class="col-sm-2">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </p>
+        <p class="col-sm-12">
+            @ViewData["Message"]
+        </p>
+    </form>
+
+    @*<form method="post" class="text-left">
+        <div class="form-group">
+            <label for="Name" class="col-sm-2 custom-control-label">Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Email" class="col-sm-2 custom-control-label">Email</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>*@
 </div>
