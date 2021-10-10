@@ -13,9 +13,8 @@ namespace Razor_CurrencyConverter.Pages
         public const double GBP_JPY_RATE = 152.74;
 
         [BindProperty]
-        public string FullName { get; set; }
-
         public double InputAmount { get; set; }
+        [BindProperty]
         public double OutputAmount { get; set; }
 
         private readonly ILogger<SimpleCurrencyConverterModel> _logger;
@@ -28,7 +27,7 @@ namespace Razor_CurrencyConverter.Pages
 
         public void OnGet()
         {
-            FullName = "Jason Huggins";
+
         }
 
         public void OnPost()
@@ -46,6 +45,7 @@ namespace Razor_CurrencyConverter.Pages
             else if (InputAmount > 0)
             {
                 OutputAmount = InputAmount * GBP_JPY_RATE;
+                ViewData["Message"] = "Amount converted at ratio £1 : ¥152.74.";
             }
         }
     }
